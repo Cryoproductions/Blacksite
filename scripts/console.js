@@ -1,14 +1,14 @@
 const validMIDs = {
-    "0256-8964-AA": ["group1", "group2", "group3", "group4"],
-    "6896-4689-C357": ["group1", "group2", "group3", "group4"],
-    "0600-9935-KE": ["group2", "group4"], // Locked to group2 and group4
-    "3071-8108-SR": ["group1", "group2", "group4"],
-    "3251-9753-AH": ["group2", "group4"],
-    "7964-6447-SS": ["group2", "group4"],
-    "5896-4673-BB": ["group1", "group2", "group4"],
-    "4790-4673-DR": ["group2", "group4"],
-    "6888-4674-BG": ["group2", "group4"],
-    "2586-4896-JS": ["group2", "group4"]
+    "0256-8964-AA": ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
+    "6896-4689-C357": ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
+    "0600-9935-KE": ["group4"], // Locked to group2 and group4
+    "3071-8108-SR": ["midassignment", "perscom - secret", "blacklist - restricted"],
+    "3251-9753-AH": ["perscom - secret", "blacklist - restricted"],
+    "7964-6447-SS": ["blacklist - restricted"],
+    "5896-4673-BB": ["midassignment", "perscom - secret", "blacklist - restricted"],
+    "4790-4673-DR": ["blacklist - restricted"],
+    "6888-4674-BG": ["blacklist - restricted"],
+    "2586-4896-JS": ["blacklist - restricted"]
 };
 
 let userMID = "";
@@ -60,17 +60,20 @@ function redirectBasedOnSelection() {
     if (userGroups.includes(selectedGroup)) {
         // Redirect based on the selected group
         switch (selectedGroup) {
-            case 'group1':
+            case 'midassignment':
                 window.location.href = 'mid.html';
                 break;
-            case 'group2':
+            case 'perscom - secret':
                 window.location.href = 'pers1.html';
                 break;
-            case 'group3':
+            case 'section 0 - topsecret':
                 window.location.href = 'blackbox.html';
                 break;
-            case 'group4':
+            case 'blacklist - restricted':
                 window.location.href = 'blacklist1.html';
+                break;
+            case 'perscom - restricted':
+                // Handle the case for 'perscom - restricted' here
                 break;
             default:
                 break;
