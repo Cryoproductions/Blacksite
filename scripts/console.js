@@ -33,7 +33,13 @@ function checkMID() {
         userAuthCode = validMIDs[mid].authCode; // Retrieve authCode from data
         midVerified = true;
         authCodeRequired = !!userAuthCode; // Check if an authCode is required
-        showAuthCodeInput();
+
+        if (authCodeRequired) {
+            showAuthCodeInput();
+        } else {
+            authorized = true;
+            showGroupSelection();
+        }
     } else {
         document.getElementById('validation-message').textContent = 'Invalid MID. Please try again.';
     }
@@ -47,7 +53,7 @@ function showAuthCodeInput() {
 function checkAuthCode() {
     const authCode = document.getElementById('auth-code').value;
 
-    if (!authCodeRequired || (authCodeRequired && authCode === userAuthCode)) {
+    if (authCodeRequired && authCode === userAuthCode) {
         authorized = true;
         showGroupSelection();
     } else {
