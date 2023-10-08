@@ -11,8 +11,8 @@ function generateONIAuthCode() {
 
     for (let i = 0; i < authCodeLength; i++) {
         const randomIndex = Math.floor(Math.random() * oniWords.length);
-        authCode += oniWords[randomIndex];
+        authCode += oniWords[randomIndex] + " ";
     }
 
-    document.getElementById('auth-code-display').textContent = authCode;
+    document.getElementById('auth-code-display').textContent = authCode.trim();
 }
