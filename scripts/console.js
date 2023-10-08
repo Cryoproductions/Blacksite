@@ -1,7 +1,7 @@
 const validMIDs = {
     "0256-8964-AA": ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
     "6896-4689-C357": ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
-    "0600-9935-KE": ["group4"], // Locked to group2 and group4
+    "0600-9935-KE": ["section 0 - topsecret", "blacklist - restricted"], // Locked to section 0 - topsecret and blacklist - restricted
     "3071-8108-SR": ["midassignment", "perscom - secret", "blacklist - restricted"],
     "3251-9753-AH": ["perscom - secret", "blacklist - restricted"],
     "7964-6447-SS": ["blacklist - restricted"],
