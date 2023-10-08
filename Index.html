@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/console.js"></script>
+</head>
+<body>
+    <h1>Personnel MID Verification</h1>
+    <div id="mid-input">
+        <label for="mid">Enter your Personnel MID:</label>
+        <input type="text" id="mid" placeholder="Enter MID">
+        <button onclick="checkMID()">Verify</button>
+    </div>
+
+    <div id="access-message">
+        <h1>ACCESS GRANTED</h1>
+    </div>
+
+    <div id="group-select-container"> <!-- Wrap the <p> element in a <div> -->
+        <p>Select the group you want to access:</p>
+        <select id="group-select">
+            <option value="group1">Group 1</option>
+            <option value="group2">Group 2</option>
+            <option value="group3">Group 3</option>
+            <option value="group4">Group 4</option>
+        </select>
+        <button onclick="redirectBasedOnSelection()">Go</button>
+    </div>
+</body>
+</html>

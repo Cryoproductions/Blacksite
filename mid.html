@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ONI MID Generator</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        #terminal {
+            background-color: #000;
+            border: 2px solid #00ff00;
+            padding: 10px;
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px #00ff00;
+        }
+
+        #generateButton {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <h1>ONI Military Terminal</h1>
+        <label for="name">Enter Your Name:</label>
+        <input type="text" id="name" placeholder="Your Name">
+        <br>
+        <button id="generateButton">Generate MID</button>
+        <p id="midOutput"></p>
+    </div>
+
+    <script>
+        function generateMid(name) {
+            const initials = name.split(" ").map(word => word.charAt(0)).join("").toUpperCase();
+            let mid = "";
+
+            // Generate the first 4 digits
+            for (let i = 0; i < 4; i++) {
+                mid += Math.floor(Math.random() * 10);
+            }
+
+            mid += "-"; // Add the hyphen
+
+            // Generate the next 4 digits
+            for (let i = 0; i < 4; i++) {
+                mid += Math.floor(Math.random() * 10);
+            }
+
+            mid += "-"; // Add another hyphen
+
+            // Add initials from the name
+            mid += initials;
+
+            return mid;
+        }
+
+        document.getElementById("generateButton").addEventListener("click", function () {
+            const name = document.getElementById("name").value;
+            const generatedMid = generateMid(name);
+            document.getElementById("midOutput").textContent = `Agent ${name}, Your Generated MID: ${generatedMid}`;
+        });
+    </script>
+</body>
+</html>

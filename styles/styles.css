@@ -1,0 +1,80 @@
+body {
+    background-color: #000;
+    color: #00FF00;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #00FF00;
+    font-size: 24px;
+}
+
+#mid-input {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #000;
+    border: 2px solid #00FF00;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.8);
+}
+
+label {
+    color: #00FF00;
+    font-size: 18px;
+}
+
+input[type="text"] {
+    background-color: #000;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #00FF00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #008800;
+}
+
+#access-message {
+    display: none;
+}
+
+#group-select-container {
+    display: none; /* Hide the group selection initially */
+    background-color: #000;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    border-radius: 5px;
+    padding: 10px; /* Adjusted padding */
+    font-size: 16px;
+    margin-top: 20px; /* Add margin to separate it from the input */
+}
+
+#group-selection button {
+    background-color: #00FF00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; /* Add margin between button and select */
+}
+
+#group-selection button:hover {
+    background-color: #008800;
+}
