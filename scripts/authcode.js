@@ -14,5 +14,6 @@ function generateONIAuthCode() {
         authCode += oniWords[randomIndex] + " ";
     }
 
-    document.getElementById('auth-code-display').textContent = authCode.trim();
+    const authCodeDisplay = document.getElementById('auth-code-display');
+    authCodeDisplay.textContent = authCode.trim();
 }
