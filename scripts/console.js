@@ -17,6 +17,8 @@ const validMIDs = {
 let userMID = "";
 let userGroups = [];
 let userAuthCode = "";
+let midVerified = false;
+let authCodeRequired = false;
 let authorized = false;
 
 document.getElementById('group-select-container').style.display = 'none';
@@ -29,6 +31,8 @@ function checkMID() {
         userMID = mid;
         userGroups = validMIDs[mid].groups; // Retrieve groups from data
         userAuthCode = validMIDs[mid].authCode; // Retrieve authCode from data
+        midVerified = true;
+        authCodeRequired = !!userAuthCode; // Check if an authCode is required
         showAuthCodeInput();
     } else {
         document.getElementById('validation-message').textContent = 'Invalid MID. Please try again.';
@@ -43,7 +47,7 @@ function showAuthCodeInput() {
 function checkAuthCode() {
     const authCode = document.getElementById('auth-code').value;
 
-    if (authCode === userAuthCode) { // Check against user's assigned authCode
+    if (!authCodeRequired || (authCodeRequired && authCode === userAuthCode)) {
         authorized = true;
         showGroupSelection();
     } else {
@@ -52,7 +56,7 @@ function checkAuthCode() {
 }
 
 function showGroupSelection() {
-    if (authorized) {
+    if (authorized && midVerified) {
         const groupSelect = document.getElementById('group-select');
         groupSelect.innerHTML = '';
 
@@ -85,6 +89,9 @@ function redirectBasedOnSelection() {
                 break;
             case 'blacklist - restricted':
                 window.location.href = 'blacklist1.html';
+                break;
+            case 'perscom - restricted':
+                window.location.href = 'perscom.html';
                 break;
             default:
                 break;
