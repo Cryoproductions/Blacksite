@@ -15,11 +15,17 @@
         <button onclick="checkMID()">Verify</button>
     </div>
 
+    <div id="auth-code-input" style="display: none;">
+        <label for="auth-code">Enter your Authorization Code:</label>
+        <input type="password" id="auth-code" placeholder="Enter Authorization Code">
+        <button onclick="checkAuthCode()">Submit</button>
+    </div>
+
     <div id="access-message">
         <h1>ACCESS GRANTED</h1>
     </div>
 
-    <div id="group-select-container"> <!-- Wrap the <p> element in a <div> -->
+    <div id="group-select-container" style="display: none;">
         <p>Select the group you want to access:</p>
         <select id="group-select">
             <option value="midassignment">MIDASSIGNMENT</option>
@@ -29,6 +35,5 @@
             <option value="perscom - restricted">PERSCOM - RESTRICTED</option>
         </select>
         <button onclick="redirectBasedOnSelection()">Go</button>
-    </div>
 </body>
 </html>
