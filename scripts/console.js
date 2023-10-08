@@ -1,16 +1,26 @@
 const validMIDs = {
     "0256-8964-AA": {
-        groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
+        groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted", "auth-code"],
         authCode: "November" // Assign an authorization code to the MID
     },
     "6896-4689-C357": {
         groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
-        authCode: "authcode2" // Assign an authorization code to the MID
+        authCode: "Oscar" // Assign an authorization code to the MID
     },
     "0600-9935-KE": {
         groups: ["", "group4"], // Locked to group2 and group4
-        authCode: "authcode3" // Assign an authorization code to the MID
+        authCode: "Lima" // Assign an authorization code to the MID
     },
+
+    "3071-8108-SR": {
+        groups: ["midassignment", "perscom - secret", "blacklist - restricted", "section 0 - topsecret"],
+        authCode: "Victor"
+    },
+
+    "": {
+        groups: [""],
+        authCode: "Mike"
+    }
     // Add more MIDs and their associated data here
 };
 
@@ -98,6 +108,9 @@ function redirectBasedOnSelection() {
                 break;
             case 'perscom - restricted':
                 window.location.href = 'perscom.html';
+                break;
+            case 'auth-code':
+                window.location.href = 'auth.html'
                 break;
             default:
                 break;
