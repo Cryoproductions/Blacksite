@@ -5,15 +5,17 @@ const oniWords = [
     "Slipspace", "High Charity", "Pillar of Autumn", "343 Guilty Spark"
 ];
 
-function generateONIAuthCode() {
-    const authCodeLength = 4; // You can change the length as needed
-    let authCode = "";
+const oniClerances = [
+    "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf",
+    "Hotel", "India", "Juliett", "Kilo", "Lima", "Mike", "November",
+    "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform",
+    "Victor", "Whiskey", "X-ray", "Yankee", "Zulu"
+];
 
-    for (let i = 0; i < authCodeLength; i++) {
-        const randomIndex = Math.floor(Math.random() * oniWords.length);
-        authCode += oniWords[randomIndex] + " ";
-    }
+function generateONIAuthCode() {
+    const randomONIWord = oniWords[Math.floor(Math.random() * oniWords.length)];
+    const randomONIClerance = oniClerances[Math.floor(Math.random() * oniClerances.length)];
 
     const authCodeDisplay = document.getElementById('auth-code-display');
-    authCodeDisplay.textContent = authCode.trim();
+    authCodeDisplay.textContent = `${randomONIWord}-${randomONIClerance}`;
 }

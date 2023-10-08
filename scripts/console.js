@@ -5,21 +5,21 @@ const validMIDs = {
     },
     "6896-4689-C357": {
         groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
-        authCode: "d3Yh1N" // Assign an authorization code to the MID
+        authCode: "Infinity" // Assign an authorization code to the MID
     },
     "0600-9935-KE": {
         groups: ["", "group4"], // Locked to group2 and group4
-        authCode: "eguLCz" // Assign an authorization code to the MID
+        authCode: "Noble" // Assign an authorization code to the MID
     },
 
     "3071-8108-SR": {
         groups: ["midassignment", "perscom - secret", "blacklist - restricted", "section 0 - topsecret"],
-        authCode: "qLgas4"
+        authCode: "Mjolnir"
     },
 
-    "": {
-        groups: [""],
-        authCode: "Mike"
+    "2236-1575-TH": {
+        groups: ["midassignment", "perscom - secret", "blacklist - restricted"],
+        authCode: "Spark"
     }
     // Add more MIDs and their associated data here
 };
