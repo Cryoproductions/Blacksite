@@ -3,6 +3,7 @@ const validMIDs = {
         groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted", "auth-code"],
         authCode: "Cortana" // Assign an authorization code to the MID
     },
+    
     "6896-4689-C357": {
         groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
         authCode: "Infinity" // Assign an authorization code to the MID
