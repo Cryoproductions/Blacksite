@@ -1,11 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>RESTRICTED ACCESS</title>
+    <title>ONI Personnel Lookup</title>
+    <style>
+        body {
+            font-family: "Courier New", monospace;
+            background-color: #000;
+            color: #00FF00;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .input-label {
+            color: #00FFFF;
+            margin-right: 5px;
+        }
+
+        .input-field {
+            background-color: #111;
+            color: #00FF00;
+            border: none;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background-color: #111;
+            color: #00FF00;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #222;
+        }
+
+        .output {
+            margin-top: 20px;
+        }
+
+        .personnel-info {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function lookupPersonnel() {
+            var firstName = document.getElementById("first-name-input").value;
+            var lastName = document.getElementById("last-name-input").value;
+            var rank = document.getElementById("rank-input").value;
+            var output = document.getElementById("output");
+
+            // Clear output field
+            output.innerHTML = "";
+
+            // Perform personnel lookup
+            var personnel = performLookup(firstName, lastName, rank);
+
+            // Display personnel information
+            if (personnel.length > 0) {
+                personnel.forEach(function (person) {
+                    output.innerHTML += "<div class='personnel-info'>Name: " + person.name + "<br/>Rank: " + person.rank + "<br/>Branch: " + person.branch + "<br/>Clearance: " + person.clearance + "<br/>GamerTag: " + person.gamerTag + "</div>";
+                });
+            } else {
+                output.innerHTML = "No personnel found matching the search criteria.";
+            }
+        }
+
+        function performLookup(firstName, lastName, rank) {
+            // Add your custom personnel database and lookup logic here
+            var personnel = [
+                { name: "Arielle Ava", rank: "CINC", branch: "UNSC Navy", clearance: "TOP-SECRET", gamerTag: "Admiral Ava" },
+                { name: "Cassius Cato", rank: "Admiral", branch: "UNSC Navy", clearance: "TOP-SECRET", gamerTag: "DownCesar" },
+                ,
+                
+            ];
+
+            // Filter personnel based on search criteria
+            var filteredPersonnel = personnel.filter(function (person) {
+                var match = true;
+
+                if (firstName && person.name.toLowerCase().indexOf(firstName.toLowerCase()) === -1) {
+                    match = false;
+                }
+
+                if (lastName && person.name.toLowerCase().indexOf(lastName.toLowerCase()) === -1) {
+                    match = false;
+                }
+
+                if (rank && person.rank.toLowerCase().indexOf(rank.toLowerCase()) === -1) {
+                    match = false;
+                }
+
+                return match;
+            });
+
+            return filteredPersonnel;
+        }
+    </script>
 </head>
 <body>
-    <h1>RESTRICTED ACCESS</h1>
+    <div class="header">
+        <h1 class="title">ONI Personnel Lookup</h1>
+    </div>
+
+    <div>
+        <label class="input-label">First Name:</label>
+        <input type="text" id="first-name-input" class="input-field">
+    </div>
+
+    <div>
+        <label class="input-label">Last Name:</label>
+        <input type="text" id="last-name-input" class="input-field">
+    </div>
+
+    <div>
+        <label class="input-label">Rank:</label>
+        <input type="text" id="rank-input" class="input-field">
+    </div>
+
+    <div>
+        <button class="button" onclick="lookupPersonnel()">Search</button>
+    </div>
+
+    <div id="output" class="output"></div>
 </body>
 </html>

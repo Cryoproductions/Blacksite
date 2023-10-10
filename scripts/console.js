@@ -1,7 +1,7 @@
 const validMIDs = {
     "0256-8964-AA": {
         groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted", "auth-code"],
-        authCode: "November" // Assign an authorization code to the MID
+        authCode: "Cortana" // Assign an authorization code to the MID
     },
     "6896-4689-C357": {
         groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted"],
@@ -13,8 +13,18 @@ const validMIDs = {
     },
 
     "3071-8108-SR": {
-        groups: ["midassignment", "perscom - secret", "blacklist - restricted", "section 0 - topsecret"],
+        groups: ["midassignment", "perscom - secret", "blacklist - restricted", "section 0 - topsecret", "Target - Restricted"],
         authCode: "Mjolnir"
+    },
+
+    "9771-1754-FM": {
+        group:["blacklist - restricted"],
+        authCode: "Silver"
+    },
+
+    "1774-2047-GO": {
+        groups: ["blacklist - restricted"],
+        authCode: "Guilty"
     },
 
     "2236-1575-TH": {
@@ -107,13 +117,18 @@ function redirectBasedOnSelection() {
                 window.location.href = 'blacklist1.html';
                 break;
             case 'perscom - restricted':
-                window.location.href = 'perscom.html';
+                window.location.href = 'PERS.html';
                 break;
             case 'auth-code':
                 window.location.href = 'auth.html'
                 break;
-            default:
+            case 'blacklist - Secret':
+                window.location.href = 'blacklist2.html'
                 break;
+            case 'Target - Restricted':
+                window.location.href = 'TargetTerminal.html'
+                break;
+            default:
         }
     } else {
         document.getElementById('validation-message').textContent = 'Access denied. You are not authorized for this group.';
