@@ -1,5 +1,5 @@
 const validMIDs = {
-    "0256-8964-AA": {
+    "02565-89647-AA": {
         groups: ["midassignment", "perscom - secret", "section 0 - topsecret", "blacklist - restricted", "auth-code"],
         authCode: "Cortana" // Assign an authorization code to the MID
     },
@@ -21,6 +21,11 @@ const validMIDs = {
     "9771-1754-FM": {
         group:["blacklist - restricted"],
         authCode: "Silver"
+    },
+
+    "00834-19223-HS": {
+        group:["midassignment", "perscom - secret", "blacklist - resrtricted", "Target - Restricted"],
+        authCode: "Lima"
     },
 
     "1774-2047-GO": {
