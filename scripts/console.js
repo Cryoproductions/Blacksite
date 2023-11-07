@@ -19,12 +19,12 @@ const validMIDs = {
     },
 
     "9771-1754-FM": {
-        group:["blacklist - restricted"],
+        groups:["blacklist - restricted"],
         authCode: "Silver"
     },
 
     "00834-19223-HS": {
-        group:["midassignment", "perscom - secret", "blacklist - restricted", "auth-code"],
+        groups:["midassignment", "perscom - secret", "blacklist - restricted", "auth-code"],
         authCode: "LimaActual"
     },
 
